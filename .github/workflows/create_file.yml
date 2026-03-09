@@ -1,0 +1,23 @@
+name: Create new Dart file
+
+on:
+  workflow_dispatch:
+
+jobs:
+  clone-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create file
+        run: echo "Create new dart file" > .github/lib/new_file.dart
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Duc Vu"
+          git config --global user.email "ghostgreatful@gmail.com"
+          git add .github/lib/new_file.dart
+          git commit -m "Add new dart file"
+          git push origin main
