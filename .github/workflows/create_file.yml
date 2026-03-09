@@ -19,7 +19,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.name "Duc Vu"
+          git config --global user.name "Finid0911"
           git config --global user.email "ghostgreatful@gmail.com"
           git add .github/lib/new_file.dart
           git commit -m "Add new dart file"
