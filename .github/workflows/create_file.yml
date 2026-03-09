@@ -3,6 +3,9 @@ name: Create new Dart file
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   clone-repo:
     runs-on: ubuntu-latest
@@ -22,5 +25,5 @@ jobs:
           git config --global user.name "Finid0911"
           git config --global user.email "ghostgreatful@gmail.com"
           git add .github/lib/new_file.dart
-          git commit -m "Add new dart file"
+          git commit -m "Add new dart file" || echo "No changes to commit"
           git push origin main
