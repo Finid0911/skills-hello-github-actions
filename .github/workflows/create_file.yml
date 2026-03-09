@@ -11,6 +11,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Create lib directory if it doesn't exist
+        run: mkdir -p .github/lib
+
       - name: Create file
         run: echo "Create new dart file" > .github/lib/new_file.dart
 
